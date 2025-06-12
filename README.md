@@ -4,6 +4,21 @@ Game_Store is a backend service for an online gaming products store, built with 
 
 ---
 
+## 📘 API Documentation
+
+You can explore and test all API endpoints using the Postman collection below:
+
+📥 [Download Game_Store.postman_collection.json](./postman/Game_Store.postman_collection.json)
+
+To use it:
+
+1. Open [Postman](https://www.postman.com/)
+2. Click **Import**
+3. Select the downloaded `.json` file
+4. Enjoy testing all endpoints like products, users, auth, and categories!
+
+---
+
 ## 🛠 Tech Stack
 
 - **Backend Framework**: [Express.js](https://expressjs.com/)
