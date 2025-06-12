@@ -8,7 +8,7 @@ Game_Store is a backend service for an online gaming products store, built with 
 
 You can explore and test all API endpoints using the Postman collection below:
 
-📥 [Download Game_Store.postman_collection.json](./postman/Game_Store.postman_collection.json)
+📥 [Download Game_Store.postman_collection.json](./postman/Game Store.postman_collection.json)
 
 To use it:
 
