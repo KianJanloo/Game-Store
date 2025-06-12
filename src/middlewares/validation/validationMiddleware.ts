@@ -14,7 +14,9 @@ const ValidateMiddleware = (validationSchema: any) => {
             })
             logger.error(" Validation failed ")
         }
-        next();
+        else {
+            next();
+        }
     }
 }
 

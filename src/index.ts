@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import logger from "./utils/logs/logger";
 import errorMiddleware from "./middlewares/error/errorMiddleware";
-import { authController, productsController, usersController } from "./controllers";
+import { authController, categoriesController, productsController, rolesController, usersController } from "./controllers";
 
 const app = express();
 app.use(cors());
@@ -12,6 +12,8 @@ app.use(express.json());
 app.use("/products", productsController);
 app.use("/auth", authController);
 app.use("/users", usersController);
+app.use("/roles", rolesController);
+app.use("/categories", categoriesController);
 
 app.use(errorMiddleware);
 

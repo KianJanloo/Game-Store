@@ -42,3 +42,15 @@
 [25-06-12 18-45-56] error: jwt must be provided
 [25-06-12 18-48-59] error: User not found
 [25-06-12 18-49-48] error: Invalid password
+[25-06-12 19-07-27] error: User not found
+[25-06-12 19-11-09] error: Access Unauthorized
+[25-06-12 19-12-23] error: Unauthorized
+[25-06-12 19-33-29] error: Access Unauthorized
+[25-06-12 19-40-26] error: E11000 duplicate key error collection: test.categories index: title_1 dup key: { title: "PC" }
+[25-06-12 19-41-26] error: Category already exists
+[25-06-12 19-41-32] error:  Validation failed 
+[25-06-12 19-42-38] error: Category already exists
+[25-06-12 19-42-42] error:  Validation failed 
+[25-06-12 19-42-48] error:  Validation failed 
+[25-06-12 19-45-57] error: Unauthorized
+[25-06-12 19-46-12] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Category"

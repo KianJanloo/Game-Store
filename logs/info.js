@@ -195,3 +195,54 @@
 [25-06-12 18-48-26] info: Serve is on
 [25-06-12 18-48-59] error: User not found
 [25-06-12 18-49-48] error: Invalid password
+[25-06-12 19-00-12] info: Serve is on
+[25-06-12 19-00-58] info: Serve is on
+[25-06-12 19-04-51] info: Serve is on
+[25-06-12 19-06-15] info: Serve is on
+[25-06-12 19-06-32] info: Serve is on
+[25-06-12 19-06-42] info: Serve is on
+[25-06-12 19-07-19] info: Serve is on
+[25-06-12 19-07-27] error: User not found
+[25-06-12 19-11-01] info: Serve is on
+[25-06-12 19-11-09] error: Access Unauthorized
+[25-06-12 19-12-02] info: Serve is on
+[25-06-12 19-12-20] info: Serve is on
+[25-06-12 19-12-23] error: Unauthorized
+[25-06-12 19-16-41] info: Serve is on
+[25-06-12 19-17-20] info: Serve is on
+[25-06-12 19-17-51] info: Serve is on
+[25-06-12 19-18-02] info: Serve is on
+[25-06-12 19-18-21] info: Serve is on
+[25-06-12 19-21-54] info: Serve is on
+[25-06-12 19-22-21] info: Serve is on
+[25-06-12 19-22-49] info: Serve is on
+[25-06-12 19-23-02] info: Serve is on
+[25-06-12 19-24-07] info: Serve is on
+[25-06-12 19-27-13] info: Serve is on
+[25-06-12 19-27-56] info: Serve is on
+[25-06-12 19-30-55] info: Serve is on
+[25-06-12 19-32-23] info: Serve is on
+[25-06-12 19-33-29] info: Serve is on
+[25-06-12 19-33-29] error: Access Unauthorized
+[25-06-12 19-34-53] info: Serve is on
+[25-06-12 19-35-33] info: Serve is on
+[25-06-12 19-35-55] info: Serve is on
+[25-06-12 19-36-33] info: Serve is on
+[25-06-12 19-38-03] info: Serve is on
+[25-06-12 19-38-35] info: Serve is on
+[25-06-12 19-39-00] info: Serve is on
+[25-06-12 19-39-37] info: Serve is on
+[25-06-12 19-40-01] info: Serve is on
+[25-06-12 19-40-26] error: E11000 duplicate key error collection: test.categories index: title_1 dup key: { title: "PC" }
+[25-06-12 19-40-48] info: Serve is on
+[25-06-12 19-41-26] info: Serve is on
+[25-06-12 19-41-26] error: Category already exists
+[25-06-12 19-41-32] error:  Validation failed 
+[25-06-12 19-42-33] info: Serve is on
+[25-06-12 19-42-38] error: Category already exists
+[25-06-12 19-42-42] error:  Validation failed 
+[25-06-12 19-42-48] error:  Validation failed 
+[25-06-12 19-44-54] info: Serve is on
+[25-06-12 19-45-57] error: Unauthorized
+[25-06-12 19-46-12] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Category"
+[25-06-12 19-47-49] info: Serve is on
