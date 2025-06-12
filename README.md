@@ -59,6 +59,6 @@ src/
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/Game_Store.git
+git clone git@github.com:KianJanloo/Game-Store.git
 cd Game_Store
 npm install
