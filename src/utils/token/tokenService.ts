@@ -2,8 +2,8 @@ import { IUser } from "../../types/user/user-type";
 import jwt from "jsonwebtoken";
 import { AppError } from "../error/AppError";
 
-const SECRET_ACCESS = "ACCESSTOKEN32938298372937863273";
-const SECRET_REFRESH = "REFRESHTOKEN32938298372937";
+export const SECRET_ACCESS = "ACCESSTOKEN32938298372937863273";
+export const SECRET_REFRESH = "REFRESHTOKEN32938298372937";
 
 export const generateToken = (user: IUser) => {
     const accessToken = jwt.sign(

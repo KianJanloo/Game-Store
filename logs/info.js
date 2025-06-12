@@ -133,3 +133,65 @@
 [25-06-12 16-02-02] info: Serve is on
 [25-06-12 16-03-48] info: Serve is on
 [25-06-12 16-04-06] info: Serve is on
+[25-06-12 17-19-55] info: Serve is on
+[25-06-12 17-21-27] info: Serve is on
+[25-06-12 17-23-02] info: Serve is on
+[25-06-12 17-23-12] error: Cast to ObjectId failed for value "getUsersById" (type string) at path "_id" for model "User"
+[25-06-12 17-23-27] error: Cast to ObjectId failed for value "ddd" (type string) at path "_id" for model "User"
+[25-06-12 17-23-33] error: User not found
+[25-06-12 17-42-17] info: Serve is on
+[25-06-12 17-42-45] info: Serve is on
+[25-06-12 17-43-11] info: Serve is on
+[25-06-12 17-43-44] info: Serve is on
+[25-06-12 17-45-07] info: Serve is on
+[25-06-12 17-45-17] error: Unauthorized
+[25-06-12 17-45-49] error: User not found
+[25-06-12 17-46-30] info: Serve is on
+[25-06-12 17-46-31] error: User already exists
+[25-06-12 17-46-34] error: User already exists
+[25-06-12 17-46-44] error: Unauthorized
+[25-06-12 17-46-58] error: Unauthorized
+[25-06-12 17-47-14] info: Serve is on
+[25-06-12 17-47-14] error: Access Unauthorized
+[25-06-12 17-50-57] info: Serve is on
+[25-06-12 17-51-44] info: Serve is on
+[25-06-12 17-52-54] info: Serve is on
+[25-06-12 18-01-26] error: User not found
+[25-06-12 18-02-58] info: Serve is on
+[25-06-12 18-03-26] info: Serve is on
+[25-06-12 18-04-06] info: Serve is on
+[25-06-12 18-04-57] info: Serve is on
+[25-06-12 18-05-31] info: Serve is on
+[25-06-12 18-06-17] info: Serve is on
+[25-06-12 18-06-54] error: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "User"
+[25-06-12 18-08-09] info: Serve is on
+[25-06-12 18-09-37] info: Serve is on
+[25-06-12 18-15-55] info: Serve is on
+[25-06-12 18-17-06] info: Serve is on
+[25-06-12 18-17-47] info: Serve is on
+[25-06-12 18-20-38] info: Serve is on
+[25-06-12 18-21-03] info: Serve is on
+[25-06-12 18-23-00] info: Serve is on
+[25-06-12 18-23-05] error: Invalid login: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-3a5619762a2sm2247491f8f.11 - gsmtp
+[25-06-12 18-23-35] info: Serve is on
+[25-06-12 18-23-39] error: Invalid login: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ffacd0b85a97d-3a561a3cdb4sm2207973f8f.54 - gsmtp
+[25-06-12 18-31-06] error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3a561b5125csm2211838f8f.70 - gsmtp
+[25-06-12 18-36-17] info: Serve is on
+[25-06-12 18-37-11] info: Serve is on
+[25-06-12 18-37-36] info: Serve is on
+[25-06-12 18-38-27] info: Serve is on
+[25-06-12 18-38-28] error:  Validation failed 
+[25-06-12 18-38-29] error:  Validation failed 
+[25-06-12 18-41-29] info: Serve is on
+[25-06-12 18-41-48] info: Serve is on
+[25-06-12 18-45-35] info: Serve is on
+[25-06-12 18-45-43] error:  Validation failed 
+[25-06-12 18-45-56] error: jwt must be provided
+[25-06-12 18-47-56] info: Serve is on
+[25-06-12 18-48-11] info: Serve is on
+[25-06-12 18-48-26] info: Serve is on
+[25-06-12 18-48-59] error: User not found
+[25-06-12 18-49-48] error: Invalid password

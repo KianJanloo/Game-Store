@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
         enum: ["admin", "user"],
         default: "user",
     },
+    profilePicture: {
+        type: String,
+        default: null,
+    }
 })
 
 const User = mongoose.model("User", userSchema);
