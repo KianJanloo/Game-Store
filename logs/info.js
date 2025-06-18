@@ -247,3 +247,47 @@
 [25-06-12 19-46-12] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Category"
 [25-06-12 19-47-49] info: Serve is on
 [25-06-12 19-48-19] info: Serve is on
+[25-06-18 14-53-36] info: Serve is on
+[25-06-18 14-54-05] error: User not found
+[25-06-18 14-55-13] error:  Validation failed 
+[25-06-18 14-59-14] info: Serve is on
+[25-06-18 14-59-31] info: Serve is on
+[25-06-18 15-03-20] info: Serve is on
+[25-06-18 15-04-10] info: Serve is on
+[25-06-18 15-05-23] error: User not found
+[25-06-18 15-13-07] info: Serve is on
+[25-06-18 15-15-22] info: Serve is on
+[25-06-18 15-16-12] info: Serve is on
+[25-06-18 15-17-01] info: Serve is on
+[25-06-18 15-22-58] info: Serve is on
+[25-06-18 15-23-45] error: Cast to ObjectId failed for value "2" (type string) at path "_id" for model "User"
+[25-06-18 15-23-48] error: Cast to ObjectId failed for value "2" (type string) at path "_id" for model "User"
+[25-06-18 15-23-51] error: Cast to ObjectId failed for value "20483749283" (type string) at path "_id" for model "User"
+[25-06-18 15-36-23] info: Serve is on
+[25-06-18 15-37-37] info: Serve is on
+[25-06-18 15-38-51] info: Serve is on
+[25-06-18 15-40-19] info: Serve is on
+[25-06-18 15-40-21] error: Product not found
+[25-06-18 15-40-44] info: Serve is on
+[25-06-18 15-40-46] error: Product not found
+[25-06-18 15-41-02] error: Product not found
+[25-06-18 15-41-26] info: Serve is on
+[25-06-18 15-45-15] info: Serve is on
+[25-06-18 15-46-12] info: Serve is on
+[25-06-18 15-49-10] info: Serve is on
+[25-06-18 15-50-47] info: Serve is on
+[25-06-18 15-55-08] info: Serve is on
+[25-06-18 15-55-46] info: Serve is on
+[25-06-18 15-57-45] info: Serve is on
+[25-06-18 15-58-55] info: Serve is on
+[25-06-18 16-00-16] info: Serve is on
+[25-06-18 16-00-47] info: Serve is on
+[25-06-18 16-01-06] info: Serve is on
+[25-06-18 16-01-07] error: Unauthorized
+[25-06-18 16-04-01] info: Serve is on
+[25-06-18 16-04-36] info: Serve is on
+[25-06-18 16-05-30] error: Payment not found
+[25-06-18 16-05-38] error: Unauthorized
+[25-06-18 16-05-41] error: Unauthorized
+[25-06-18 16-11-26] info: Serve is on
+[25-06-18 16-11-59] error: Status of this payment id confirmed and you can't delete that.

@@ -54,3 +54,17 @@
 [25-06-12 19-42-48] error:  Validation failed 
 [25-06-12 19-45-57] error: Unauthorized
 [25-06-12 19-46-12] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Category"
+[25-06-18 14-54-05] error: User not found
+[25-06-18 14-55-13] error:  Validation failed 
+[25-06-18 15-05-23] error: User not found
+[25-06-18 15-23-45] error: Cast to ObjectId failed for value "2" (type string) at path "_id" for model "User"
+[25-06-18 15-23-48] error: Cast to ObjectId failed for value "2" (type string) at path "_id" for model "User"
+[25-06-18 15-23-51] error: Cast to ObjectId failed for value "20483749283" (type string) at path "_id" for model "User"
+[25-06-18 15-40-21] error: Product not found
+[25-06-18 15-40-46] error: Product not found
+[25-06-18 15-41-02] error: Product not found
+[25-06-18 16-01-07] error: Unauthorized
+[25-06-18 16-05-30] error: Payment not found
+[25-06-18 16-05-38] error: Unauthorized
+[25-06-18 16-05-41] error: Unauthorized
+[25-06-18 16-11-59] error: Status of this payment id confirmed and you can't delete that.
