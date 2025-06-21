@@ -10,3 +10,9 @@ export interface IPayment {
 export interface IPaymentCreateData {
     amount: number, 
 }
+
+export interface IPaymentUpdateData {
+    amount?: number,
+    userId?: string,
+    productId?: string,
+}

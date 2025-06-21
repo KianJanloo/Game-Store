@@ -1,6 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
-import { cancelPayment, continuePayment, createPayment, deletePaymentById, getPaymentById, getPayments, getPaymentsByUserId } from "./paymentsServices";
+import { cancelPayment, continuePayment, createPayment, deletePaymentById, getPaymentById, getPayments, getPaymentsByUserId, updatePayment } from "./paymentsServices";
 import authMiddleware from "../../middlewares/auth/authMiddleware";
+import ValidateMiddleware from "../../middlewares/validation/validationMiddleware";
+import { createPaymentValidation } from "../.././utils/validations/payments/payments-validation";
+import { AppError } from "../.././utils/error/AppError";
 
 const router = express.Router();
 
@@ -8,7 +11,7 @@ router.get("/", authMiddleware, async (req: any, res: Response, next: NextFuncti
     try {
         const { user } = req;
         if (user.role !== "admin") {
-            throw new Error("Access unauthorized");
+            throw new AppError("Access unauthorized", 403);
         }
         res.send(await getPayments());
     } catch (error) {
@@ -35,7 +38,7 @@ router.get("/payment/:id", authMiddleware, async (req: Request, res: Response, n
 })
 
 
-router.post("/:id", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
+router.post("/:id", ValidateMiddleware(createPaymentValidation), authMiddleware, async (req: any, res: Response, next: NextFunction) => {
     try {
         const { id } = req.user;
         const productId = req.params.id;
@@ -46,11 +49,25 @@ router.post("/:id", authMiddleware, async (req: any, res: Response, next: NextFu
     }
 })
 
+router.put("/:id", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
+    try {
+        const { user } = req;
+        if (user.role !== "admin") {
+            throw new AppError("Access unauthorized", 403);
+        }
+        const paymentId = req.params.id;
+        const data = req.body;
+        res.send(await updatePayment(paymentId, data));
+    } catch (error) {
+        next(error);
+    }
+})
+
 router.put("/continue/:id", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
     try {
         const { user } = req;
         if (user.role !== "admin") {
-            throw new Error("Access unauthorized");
+            throw new AppError("Access unauthorized", 403);
         }
         const paymentId = req.params.id;
         res.send(await continuePayment(paymentId))
@@ -63,7 +80,7 @@ router.put("/cancel/:id", authMiddleware, async (req: any, res: Response, next: 
     try {
         const { user } = req;
         if (user.role !== "admin") {
-            throw new Error("Access unauthorized");
+            throw new AppError("Access unauthorized", 403);
         }
         const paymentId = req.params.id;
         res.send(await cancelPayment(paymentId))

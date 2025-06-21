@@ -6,5 +6,7 @@ import rolesController from "./roles/rolesControllers";
 import categoriesController from "./categories/categoriesControllers";
 import dashboardController from "./dashboard/dashboardControllers";
 import paymentsController from "./payments/paymentsControllers";
+import scoresControllers from './scores/scoresController'
+import favoritesControllers from './favorites/favoritesControllers'
 
-export { productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };
+export { favoritesControllers, scoresControllers, productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };

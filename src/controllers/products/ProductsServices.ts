@@ -24,7 +24,7 @@ export const createProduct = async (product: IProduct) => {
 }
 
 export const updateProduct = async (product: IProduct, id: string) => {
-    const updatedProduct = await Product.findByIdAndUpdate(id, product);
+    const updatedProduct = await Product.findByIdAndUpdate(id, {product, updatedAt: new Date()});
     if(!updatedProduct){
         throw new AppError("Product not found", 404);
     }

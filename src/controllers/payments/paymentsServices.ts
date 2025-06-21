@@ -1,4 +1,4 @@
-import { IPaymentCreateData } from "payments/payments-type";
+import { IPaymentCreateData, IPaymentUpdateData } from "payments/payments-type";
 import { Payment, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
 
@@ -46,6 +46,19 @@ export const createPayment = async (productId: string, userId: string, data: IPa
         success: true,
         message: "Payment successfully added and posted."
     })
+}
+
+export const updatePayment = async (paymentId: string, data: IPaymentUpdateData) => {
+    const payment = await Payment.findById(paymentId);
+    if(!payment){
+        throw new AppError("Payment not found", 404);
+    };
+    
+    const editPayment = await Payment.findByIdAndUpdate(paymentId, {...data, updatedAt: new Date()});
+    return {
+        success: true,
+        message: " Payment successfully updated. "
+    }
 }
 
 export const continuePayment = async (paymentId: string) => {
