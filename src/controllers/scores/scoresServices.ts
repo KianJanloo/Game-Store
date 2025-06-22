@@ -21,7 +21,13 @@ export const editScoreForUser = async (userId: string, data: IEditScore) => {
         throw new AppError("User not found.", 404);
     };
 
-    const score = await Score.findOneAndUpdate({ userId: userId }, { amount: data.amount })
+    const score = await Score.findOne({ userId: userId })
+    if(score){
+        await Score.findOneAndUpdate({ userId: userId }, { amount: score.amount + data.amount })
+    }
+    else{
+        throw new AppError("Score not found.", 404);
+    }
     return {
         success: true,
         message: "Score's amount successfully edited for user."

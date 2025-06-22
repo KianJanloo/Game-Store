@@ -15,7 +15,7 @@ router.get("/:id", authMiddleware, (req: Request, res: Response, next: NextFunct
     }
 })
 
-router.put("/:id", ValidateMiddleware(editScoreValidation), authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+router.post("/:id", ValidateMiddleware(editScoreValidation), authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const userId = req.params.id;
         const data = req.body;
