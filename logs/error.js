@@ -68,3 +68,10 @@
 [25-06-18 16-05-38] error: Unauthorized
 [25-06-18 16-05-41] error: Unauthorized
 [25-06-18 16-11-59] error: Status of this payment id confirmed and you can't delete that.
+[25-06-24 02-17-07] error:  Validation failed 
+[25-06-24 02-17-17] error: User not found
+[25-06-24 02-17-22] error: User not found
+[25-06-24 02-17-49] error: Score not found.
+[25-06-24 02-22-15] error:  Validation failed 
+[25-06-24 02-22-25] error: Product not found
+[25-06-24 02-22-32] error: Product not found

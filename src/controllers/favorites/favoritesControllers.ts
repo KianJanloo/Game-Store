@@ -1,6 +1,6 @@
 import express, { Response, Request, NextFunction } from 'express';
 import authMiddleware from '../../middlewares/auth/authMiddleware';
-import { createFavorite, deleteFavorite, getFavoriteById, getFavoritesByUserId } from './favoritesServices';
+import { createFavorite, deleteFavorite, getFavoritesByUserId } from './favoritesServices';
 import { AppError } from '../.././utils/error/AppError';
 
 const router = express.Router();
@@ -9,19 +9,6 @@ router.get("/", authMiddleware, async (req: any, res: Response, next: NextFuncti
     try {
         const userId = req.user.id;
         res.send(await getFavoritesByUserId(userId));
-    } catch (error) {
-        next(error);
-    }
-})
-
-router.get("/:id", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
-    try {
-        const role = req.user.role;
-        if(role !== "admin"){
-            throw new AppError("Access unauthorized", 403);
-        }
-        const favoriteId = req.params.id;
-        res.send(await getFavoriteById(favoriteId));
     } catch (error) {
         next(error);
     }

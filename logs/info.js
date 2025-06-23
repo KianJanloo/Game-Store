@@ -296,3 +296,16 @@
 [25-06-18 16-20-25] info: Serve is on
 [25-06-18 16-21-03] info: Serve is on
 [25-06-18 16-23-51] info: Serve is on
+[25-06-24 02-14-34] info: Serve is on
+[25-06-24 02-17-07] error:  Validation failed 
+[25-06-24 02-17-17] error: User not found
+[25-06-24 02-17-22] error: User not found
+[25-06-24 02-17-49] error: Score not found.
+[25-06-24 02-20-44] info: Serve is on
+[25-06-24 02-22-15] error:  Validation failed 
+[25-06-24 02-22-25] error: Product not found
+[25-06-24 02-22-32] error: Product not found
+[25-06-24 02-24-32] info: Serve is on
+[25-06-24 02-31-03] info: Serve is on
+[25-06-24 02-31-40] info: Serve is on
+[25-06-24 02-32-10] info: Serve is on

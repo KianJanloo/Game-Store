@@ -11,14 +11,6 @@ export const getFavoritesByUserId = async (userId: string) => {
     return favorites;
 }
 
-export const getFavoriteById = async (favoriteId: string) => {
-    const favorite = await Favorite.findById({ favoriteId });
-    if (!favorite) {
-        throw new AppError("Favorite is undefined.", 404);
-    };
-    return favorite;
-}
-
 export const createFavorite = async (userId: string, productId: string) => {
     const user = await User.findById(userId);
     if (!user) {
