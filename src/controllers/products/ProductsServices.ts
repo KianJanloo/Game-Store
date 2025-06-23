@@ -2,9 +2,17 @@ import { Product } from "../../models";
 import { IProduct } from "../../types/product/product-type";
 import { AppError } from "../../utils/error/AppError";
 
-export const getProducts = async () => {
+export const getProducts = async (page: number = 1, limit: number = 10) => {
     const products = await Product.find();
-    return products;
+    
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedProducts = products.slice(startIndex, endIndex);
+    return {
+        products: paginatedProducts,
+        total: products.length,
+    };
 }
 export const getProductById = async (id: string) => {
     const product = await Product.findById(id);

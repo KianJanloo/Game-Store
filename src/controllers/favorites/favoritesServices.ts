@@ -1,14 +1,21 @@
 import { Favorite, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
 
-export const getFavoritesByUserId = async (userId: string) => {
+export const getFavoritesByUserId = async (userId: string, page: number = 1, limit: number = 10) => {
     const user = await User.findById(userId);
     if (!user) {
         throw new AppError(" User is undefined. ", 404);
     };
 
     const favorites = await Favorite.find({ userId });
-    return favorites;
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedFavorites = favorites.slice(startIndex, endIndex);
+    return {
+        products: paginatedFavorites,
+        total: favorites.length,
+    };
 }
 
 export const createFavorite = async (userId: string, productId: string) => {

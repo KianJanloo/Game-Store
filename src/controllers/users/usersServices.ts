@@ -1,15 +1,22 @@
 import { User } from "../../models"
 import { AppError } from "../../utils/error/AppError";
 
-export const getUsers = async () => {
+export const getUsers = async (page: number = 1, limit: number = 10) => {
     const users = await User.find();
-    return users.map((user) => ({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
-        profilePicture: user.profilePicture,
-    }));
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedUsers = users.slice(startIndex, endIndex);
+    return {
+        products: paginatedUsers.map((user) => ({
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            role: user.role,
+            profilePicture: user.profilePicture,
+        })),
+        total: users.length,
+    };
 }
 
 export const getUsersById = async (id: string) => {

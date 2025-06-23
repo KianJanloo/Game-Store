@@ -3,12 +3,19 @@ import Category from "../../models/categories/categories";
 import { ICategories } from "../../types/categories/categories-type";
 import { AppError } from "../../utils/error/AppError";
 
-export const getCategories = async () => {
+export const getCategories = async (page: number = 1, limit: number = 10) => {
     const categories = await Categories.find() as ICategories[];
-    return categories.map((category) => ({
-        id: category.id,
-        title: category.title
-    }));
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedCategories = categories.splice(startIndex, endIndex);
+    return {
+        categories: paginatedCategories.map((category) => ({
+            id: category.id,
+            title: category.title
+        })),
+        total: categories.length
+    };
 }
 
 export const getCategoryById = async (id: string) => {

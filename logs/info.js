@@ -309,3 +309,6 @@
 [25-06-24 02-31-03] info: Serve is on
 [25-06-24 02-31-40] info: Serve is on
 [25-06-24 02-32-10] info: Serve is on
+[25-06-24 02-47-16] info: Serve is on
+[25-06-24 02-48-14] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
+[25-06-24 02-48-43] error: connect ETIMEDOUT 65.62.83.59:27017

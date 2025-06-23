@@ -75,3 +75,5 @@
 [25-06-24 02-22-15] error:  Validation failed 
 [25-06-24 02-22-25] error: Product not found
 [25-06-24 02-22-32] error: Product not found
+[25-06-24 02-48-14] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
+[25-06-24 02-48-43] error: connect ETIMEDOUT 65.62.83.59:27017

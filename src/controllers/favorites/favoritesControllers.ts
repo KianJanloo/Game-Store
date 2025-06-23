@@ -8,7 +8,9 @@ const router = express.Router();
 router.get("/", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
     try {
         const userId = req.user.id;
-        res.send(await getFavoritesByUserId(userId));
+        const page = Number(req.query.page);
+        const limit = Number(req.query.limit);
+        res.send(await getFavoritesByUserId(userId, page, limit));
     } catch (error) {
         next(error);
     }

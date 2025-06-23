@@ -2,18 +2,32 @@ import { IPaymentCreateData, IPaymentUpdateData } from "payments/payments-type";
 import { Payment, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
 
-export const getPayments = async () => {
+export const getPayments = async (page: number = 1, limit: number = 10) => {
     const payments = await Payment.find();
-    return payments;
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedPayments = payments.slice(startIndex, endIndex);
+    return {
+        products: paginatedPayments,
+        total: payments.length,
+    };
 }
 
-export const getPaymentsByUserId = async (userId: string) => {
+export const getPaymentsByUserId = async (userId: string, page: number = 1, limit: number = 10) => {
     const user = await User.findById(userId);
     if (!user) {
         throw new AppError("User not found", 404);
     }
     const payments = await Payment.find({ userId });
-    return payments
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedPayments = payments.slice(startIndex, endIndex);
+    return {
+        products: paginatedPayments,
+        total: payments.length,
+    };
 }
 
 export const getPaymentById = async (paymentId: string) => {
