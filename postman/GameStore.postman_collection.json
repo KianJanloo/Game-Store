@@ -20,7 +20,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -37,11 +37,10 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/products",
+									"raw": "{{baseURL}}/products",
 									"host": [
-										"localhost"
+										"{{baseURL}}"
 									],
-									"port": "3000",
 									"path": [
 										"products"
 									]
@@ -74,12 +73,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/products/:id",
-									"protocol": "http",
+									"raw": "{{baseURL}}/products/:id",
 									"host": [
-										"localhost"
+										"{{baseURL}}"
 									],
-									"port": "3000",
 									"path": [
 										"products",
 										":id"
@@ -110,12 +107,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/products/:id",
-									"protocol": "http",
+									"raw": "{{baseURL}}/products/:id",
 									"host": [
-										"localhost"
+										"{{baseURL}}"
 									],
-									"port": "3000",
 									"path": [
 										"products",
 										":id"
@@ -138,12 +133,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products",
-							"protocol": "http",
+							"raw": "{{baseURL}}/products",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"products"
 							]
@@ -157,12 +150,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/:id",
-							"protocol": "http",
+							"raw": "{{baseURL}}/products/:id",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								":id"
@@ -197,12 +188,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/login",
-							"protocol": "http",
+							"raw": "{{baseURL}}/auth/login",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"login"
@@ -226,12 +215,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/register",
-							"protocol": "http",
+							"raw": "{{baseURL}}/auth/register",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"register"
@@ -255,12 +242,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/refresh",
-							"protocol": "http",
+							"raw": "{{baseURL}}/auth/refresh",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"refresh"
@@ -284,12 +269,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/forget-password",
-							"protocol": "http",
+							"raw": "{{baseURL}}/auth/forget-password",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"forget-password"
@@ -313,12 +296,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/reset-password",
-							"protocol": "http",
+							"raw": "{{baseURL}}/auth/reset-password",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"reset-password"
@@ -338,12 +319,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
+							"raw": "{{baseURL}}/users",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"users"
 							]
@@ -357,12 +336,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/:id",
-							"protocol": "http",
+							"raw": "{{baseURL}}/users/:id",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								":id"
@@ -393,12 +370,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/:id",
-							"protocol": "http",
+							"raw": "{{baseURL}}/users/:id",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								":id"
@@ -443,12 +418,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/roles/change",
-							"protocol": "http",
+							"raw": "{{baseURL}}/roles/change",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"roles",
 								"change"
@@ -490,12 +463,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/categories",
-									"protocol": "http",
+									"raw": "{{baseURL}}/categories",
 									"host": [
-										"localhost"
+										"{{baseURL}}"
 									],
-									"port": "3000",
 									"path": [
 										"categories"
 									]
@@ -519,12 +490,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/categories/:id",
-									"protocol": "http",
+									"raw": "{{baseURL}}/categories/:id",
 									"host": [
-										"localhost"
+										"{{baseURL}}"
 									],
-									"port": "3000",
 									"path": [
 										"categories",
 										":id"
@@ -547,12 +516,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories",
-							"protocol": "http",
+							"raw": "{{baseURL}}/categories",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categories"
 							]
@@ -566,14 +533,539 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories/:id",
-							"protocol": "http",
+							"raw": "{{baseURL}}/categories/:id",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/dashboard/summary",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"dashboard",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get All Payments ( admin )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Payments By UserID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments/payment/:paymentId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								"payment",
+								":paymentId"
+							],
+							"variable": [
+								{
+									"key": "paymentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": \"<intiger>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/payments/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Continue A Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments/continue/:paymentId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								"continue",
+								":paymentId"
+							],
+							"variable": [
+								{
+									"key": "paymentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel A Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments/cancel/:paymentId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								"cancel",
+								":paymentId"
+							],
+							"variable": [
+								{
+									"key": "paymentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/payments/:paymentId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"payments",
+								":paymentId"
+							],
+							"variable": [
+								{
+									"key": "paymentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scores",
+			"item": [
+				{
+					"name": "Get Score By UserID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/socres/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"socres",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Score For User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"<intiger>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/scores/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"scores",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "Get Favorites Of User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/favorites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite By ID ( admin )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/favorites/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/favorites/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Favorite By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/favorites/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites",
 								":id"
 							],
 							"variable": [
