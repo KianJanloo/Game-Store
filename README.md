@@ -67,6 +67,15 @@ src/
 ### 🗂 Categories (`/categories`)
 - Manage product categories
 
+### 💵 Payments (`/payments`)
+- Manage & get payments for admin & user.
+
+### 🪙 Scores (`/scores`)
+- Add & get scores of user at the site.
+
+### ❣️ Favorites (`/favorites`)
+- Add & get all and by id of users' favorites.
+
 > More features will be added soon!
 
 ---
