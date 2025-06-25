@@ -125,3 +125,6 @@
 [25-06-25 22-02-08] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
 [25-06-25 22-05-32] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
 [25-06-25 22-05-58] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-27-18] error: Unauthorized
+[25-06-25 22-27-54] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-00.nlqmdqy.mongodb.net
+[25-06-25 22-29-56] error: Unauthorized
