@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import logger from "./utils/logs/logger";
 import errorMiddleware from "./middlewares/error/errorMiddleware";
-import { authController, categoriesController, dashboardController, favoritesControllers, paymentsController, productsController, rolesController, scoresControllers, usersController } from "./controllers";
+import { authController, cartControllers, categoriesController, dashboardController, favoritesControllers, paymentsController, productsController, rolesController, scoresControllers, usersController } from "./controllers";
 
 const app = express();
 app.use(cors());
@@ -18,6 +18,7 @@ app.use("/dashboard", dashboardController);
 app.use("/payments", paymentsController);
 app.use("/scores", scoresControllers)
 app.use("/favorites", favoritesControllers)
+app.use("/cart", cartControllers)
 
 app.use(errorMiddleware);
 

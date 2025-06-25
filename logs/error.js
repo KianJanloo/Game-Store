@@ -106,3 +106,11 @@
 [25-06-25 13-58-56] error: Access Unauthorized
 [25-06-25 13-59-27] error: Access Unauthorized
 [25-06-25 14-05-47] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
+[25-06-25 15-40-37] error: Unauthorized
+[25-06-25 15-41-02] error: Unauthorized
+[25-06-25 15-41-24] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-42-06] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-42-21] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-43-06] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
+[25-06-25 15-43-18] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-43-22] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"

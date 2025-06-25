@@ -8,5 +8,6 @@ import dashboardController from "./dashboard/dashboardControllers";
 import paymentsController from "./payments/paymentsControllers";
 import scoresControllers from './scores/scoresController'
 import favoritesControllers from './favorites/favoritesControllers'
+import cartControllers from './cart/cartControllers'
 
-export { favoritesControllers, scoresControllers, productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };
+export { cartControllers, favoritesControllers, scoresControllers, productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };

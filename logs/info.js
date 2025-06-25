@@ -394,3 +394,33 @@
 [25-06-25 14-10-16] info: Serve is on
 [25-06-25 14-11-30] info: Serve is on
 [25-06-25 14-11-39] info: Serve is on
+[25-06-25 15-39-47] info: Serve is on
+[25-06-25 15-40-37] error: Unauthorized
+[25-06-25 15-41-02] error: Unauthorized
+[25-06-25 15-41-24] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-42-03] info: Serve is on
+[25-06-25 15-42-06] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-42-19] info: Serve is on
+[25-06-25 15-42-21] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-43-06] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
+[25-06-25 15-43-18] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-43-22] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 15-44-49] info: Serve is on
+[25-06-25 15-45-09] info: Serve is on
+[25-06-25 15-47-26] info: Serve is on
+[25-06-25 15-47-47] info: Serve is on
+[25-06-25 15-49-23] info: Serve is on
+[25-06-25 15-50-00] info: Serve is on
+[25-06-25 15-50-13] info: Serve is on
+[25-06-25 15-51-03] info: Serve is on
+[25-06-25 15-55-53] info: Serve is on
+[25-06-25 20-09-52] info: Serve is on
+[25-06-25 20-15-40] info: Serve is on
+[25-06-25 20-16-14] info: Serve is on
+[25-06-25 20-19-45] info: Serve is on
+[25-06-25 20-23-29] info: Serve is on
+[25-06-25 20-25-32] info: Serve is on
+[25-06-25 20-25-52] info: Serve is on
+[25-06-25 20-29-18] info: Serve is on
+[25-06-25 20-31-32] info: Serve is on
+[25-06-25 20-34-35] info: Serve is on

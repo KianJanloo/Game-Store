@@ -133,12 +133,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/products",
+							"raw": "{{baseURL}}/products?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -255,7 +265,7 @@
 					"response": []
 				},
 				{
-					"name": "Forget Password",
+					"name": "Forget Password ( 1 step )",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -282,7 +292,7 @@
 					"response": []
 				},
 				{
-					"name": "Reset Password",
+					"name": "Reset Password ( 2 step )",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -319,12 +329,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users",
+							"raw": "{{baseURL}}/users?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -387,6 +407,53 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Edit Profile User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"profilePicture\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -401,7 +468,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -446,7 +513,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -482,7 +549,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -516,12 +583,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/categories",
+							"raw": "{{baseURL}}/categories?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -595,12 +672,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/payments",
+							"raw": "{{baseURL}}/payments?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"payments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -622,13 +709,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/payments/:userId",
+							"raw": "{{baseURL}}/payments/:userId?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"payments",
 								":userId"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							],
 							"variable": [
 								{
@@ -843,12 +940,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/socres/:userId",
+							"raw": "{{baseURL}}/scores/:userId",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
-								"socres",
+								"scores",
 								":userId"
 							],
 							"variable": [
@@ -862,7 +959,7 @@
 					"response": []
 				},
 				{
-					"name": "Add Score For User",
+					"name": "Get All Scores ( admin )",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -874,7 +971,40 @@
 								}
 							]
 						},
-						"method": "POST",
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/scores?page=1$limit=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"scores"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1$limit=10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Score For User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -890,12 +1020,61 @@
 							"raw": "{\n    \"amount\": \"<intiger>\"\n}"
 						},
 						"url": {
-							"raw": "{{baseURL}}/scores/:userId",
+							"raw": "{{baseURL}}/scores/increase/:userId",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"scores",
+								"increase",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease Score For User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"<intiger>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/scores/decrease/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"scores",
+								"decrease",
 								":userId"
 							],
 							"variable": [
@@ -938,54 +1117,21 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseURL}}/favorites",
+							"raw": "{{baseURL}}/favorites?page=1&limit=10",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"favorites"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Favorite By ID ( admin )",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseURL}}/favorites/:id",
-							"host": [
-								"{{baseURL}}"
 							],
-							"path": [
-								"favorites",
-								":id"
-							],
-							"variable": [
+							"query": [
 								{
-									"key": "id",
-									"value": ""
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
 								}
 							]
 						}
@@ -1079,6 +1225,18 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGFmNDhjYTA5YWM4YTc3ODAzNWQzYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDg0MjU3MCwiZXhwIjoxNzUwODQ2MTcwfQ.JbATleD5mpeyzTlp9DprCDZDa6kaLNUfre48fLIi_LU",
+			"type": "default"
 		}
 	]
 }
