@@ -425,3 +425,57 @@
 [25-06-25 20-31-32] info: Serve is on
 [25-06-25 20-34-35] info: Serve is on
 [25-06-25 20-37-11] info: Serve is on
+[25-06-25 20-51-05] info: Serve is on
+[25-06-25 20-51-32] info: Serve is on
+[25-06-25 20-53-00] info: Serve is on
+[25-06-25 20-53-25] info: Serve is on
+[25-06-25 20-53-53] info: Serve is on
+[25-06-25 20-55-13] info: Serve is on
+[25-06-25 20-57-18] info: Serve is on
+[25-06-25 20-58-24] info: Serve is on
+[25-06-25 20-59-18] info: Serve is on
+[25-06-25 21-00-17] info: Serve is on
+[25-06-25 21-00-35] info: Serve is on
+[25-06-25 21-01-02] info: Serve is on
+[25-06-25 21-01-42] info: Serve is on
+[25-06-25 21-03-08] info: Serve is on
+[25-06-25 21-06-26] info: Serve is on
+[25-06-25 21-11-00] error: Unauthorized
+[25-06-25 21-11-44] error: Card is undefined or clear.
+[25-06-25 21-13-25] info: Serve is on
+[25-06-25 21-13-38] error: Card is undefined or clear.
+[25-06-25 21-19-01] info: Serve is on
+[25-06-25 21-19-42] info: Serve is on
+[25-06-25 21-20-08] info: Serve is on
+[25-06-25 21-21-25] info: Serve is on
+[25-06-25 21-22-28] info: Serve is on
+[25-06-25 21-28-21] info: Serve is on
+[25-06-25 21-28-35] info: Serve is on
+[25-06-25 21-32-14] info: Serve is on
+[25-06-25 21-33-37] info: Serve is on
+[25-06-25 21-35-03] info: Serve is on
+[25-06-25 21-37-10] info: Serve is on
+[25-06-25 21-37-55] info: Serve is on
+[25-06-25 21-41-34] error: Card is undefined or clear.
+[25-06-25 21-41-52] error: Card is undefined or clear.
+[25-06-25 21-42-22] info: Serve is on
+[25-06-25 21-42-41] info: Serve is on
+[25-06-25 21-43-54] info: Serve is on
+[25-06-25 21-47-53] info: Serve is on
+[25-06-25 21-53-28] info: Serve is on
+[25-06-25 21-55-54] info: Serve is on
+[25-06-25 21-56-49] info: Serve is on
+[25-06-25 21-57-50] info: Serve is on
+[25-06-25 21-58-00] info: Serve is on
+[25-06-25 21-59-36] info: Serve is on
+[25-06-25 22-00-11] info: Serve is on
+[25-06-25 22-00-45] info: Serve is on
+[25-06-25 22-01-12] info: Serve is on
+[25-06-25 22-01-14] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-01-27] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-01-46] info: Serve is on
+[25-06-25 22-01-48] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-02-08] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-05-32] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-05-57] info: Serve is on
+[25-06-25 22-05-58] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }

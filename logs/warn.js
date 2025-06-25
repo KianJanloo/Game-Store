@@ -114,3 +114,14 @@
 [25-06-25 15-43-06] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
 [25-06-25 15-43-18] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
 [25-06-25 15-43-22] error: Cast to ObjectId failed for value "{ userId: '685bc902f609d81399c16541' }" (type Object) at path "_id" for model "cart"
+[25-06-25 21-11-00] error: Unauthorized
+[25-06-25 21-11-44] error: Card is undefined or clear.
+[25-06-25 21-13-38] error: Card is undefined or clear.
+[25-06-25 21-41-34] error: Card is undefined or clear.
+[25-06-25 21-41-52] error: Card is undefined or clear.
+[25-06-25 22-01-14] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-01-27] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-01-48] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-02-08] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-05-32] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
+[25-06-25 22-05-58] error: E11000 duplicate key error collection: test.orders index: id_1 dup key: { id: null }
