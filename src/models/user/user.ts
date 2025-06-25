@@ -22,7 +22,23 @@ const userSchema = new mongoose.Schema({
     profilePicture: {
         type: String,
         default: null,
-    }
+    },
+    firstName: {
+        type: String,
+        default: null
+    },
+    lastName: {
+        type: String,
+        default: null
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
+    },
+    updatedAt: {
+        type: Date,
+        default: new Date()
+    },
 })
 
 const User = mongoose.model("User", userSchema);

@@ -7,14 +7,20 @@ export const getFavoritesByUserId = async (userId: string, page: number = 1, lim
         throw new AppError(" User is undefined. ", 404);
     };
 
-    const favorites = await Favorite.find({ userId });
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
+    const favorites = await Favorite.find({ user: userId })
+    .populate("product")
+    .select("-user")
+    .limit(limit)
+    .skip((page - 1) * limit)
 
-    const paginatedFavorites = favorites.slice(startIndex, endIndex);
+    const total = await Favorite.countDocuments({ user: userId })
+
     return {
-        products: paginatedFavorites,
-        total: favorites.length,
+        favorites: favorites.map(favorite => ({
+            id: favorite.id,
+            product: favorite.product
+        })),
+        total: total,
     };
 }
 
@@ -31,7 +37,7 @@ export const createFavorite = async (userId: string, productId: string) => {
 
     const existingFavorite = await Favorite.findOne({ product: productId, user: userId });
     if (existingFavorite) {
-        throw new AppError("This product already exist in favorites user list.")
+        throw new AppError("This product already exist in favorites user list.", 409)
     }
 
     await Favorite.create({ user: userId, product: productId });

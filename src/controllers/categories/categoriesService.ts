@@ -4,17 +4,18 @@ import { ICategories } from "../../types/categories/categories-type";
 import { AppError } from "../../utils/error/AppError";
 
 export const getCategories = async (page: number = 1, limit: number = 10) => {
-    const categories = await Categories.find() as ICategories[];
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
+    const categories = await Categories.find()
+        .skip((page - 1) * limit)
+        .limit(limit)
 
-    const paginatedCategories = categories.splice(startIndex, endIndex);
+    const total = await Categories.countDocuments()
+
     return {
-        categories: paginatedCategories.map((category) => ({
+        categories: categories.map((category) => ({
             id: category.id,
             title: category.title
         })),
-        total: categories.length
+        total: total
     };
 }
 

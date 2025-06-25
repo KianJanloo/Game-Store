@@ -322,3 +322,74 @@
 [25-06-24 03-29-10] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
 [25-06-24 03-32-44] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
 [25-06-24 03-33-30] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
+[25-06-25 12-37-45] info: Serve is on
+[25-06-25 12-38-55] error: Unauthorized
+[25-06-25 12-40-23] error: Cast to ObjectId failed for value "61" (type string) at path "_id" for model "User"
+[25-06-25 12-40-34] error: Cast to ObjectId failed for value "61" (type string) at path "_id" for model "User"
+[25-06-25 12-41-03] error: This product already exist in favorites user list.
+[25-06-25 12-43-31] info: Serve is on
+[25-06-25 12-43-42] error: This product already exist in favorites user list.
+[25-06-25 12-45-00] info: Serve is on
+[25-06-25 12-45-03] error: This product already exist in favorites user list.
+[25-06-25 12-46-23] info: Serve is on
+[25-06-25 12-47-40] info: Serve is on
+[25-06-25 12-48-30] error: User not found.
+[25-06-25 12-49-22] info: Serve is on
+[25-06-25 12-50-00] info: Serve is on
+[25-06-25 12-51-08] info: Serve is on
+[25-06-25 12-51-51] info: Serve is on
+[25-06-25 12-54-46] info: Serve is on
+[25-06-25 12-55-28] info: Serve is on
+[25-06-25 12-55-39] info: Serve is on
+[25-06-25 12-56-20] info: Serve is on
+[25-06-25 12-56-27] info: Serve is on
+[25-06-25 12-56-46] info: Serve is on
+[25-06-25 12-57-15] info: Serve is on
+[25-06-25 12-58-56] info: Serve is on
+[25-06-25 13-00-18] info: Serve is on
+[25-06-25 13-23-59] info: Serve is on
+[25-06-25 13-24-45] info: Serve is on
+[25-06-25 13-25-03] info: Serve is on
+[25-06-25 13-25-45] info: Serve is on
+[25-06-25 13-26-08] info: Serve is on
+[25-06-25 13-27-55] info: Serve is on
+[25-06-25 13-28-15] info: Serve is on
+[25-06-25 13-29-12] info: Serve is on
+[25-06-25 13-30-48] error: Unauthorized
+[25-06-25 13-33-00] info: Serve is on
+[25-06-25 13-33-44] info: Serve is on
+[25-06-25 13-36-36] info: Serve is on
+[25-06-25 13-36-56] info: Serve is on
+[25-06-25 13-37-03] info: Serve is on
+[25-06-25 13-44-36] info: Serve is on
+[25-06-25 13-44-36] error: Unauthorized
+[25-06-25 13-46-50] info: Serve is on
+[25-06-25 13-49-03] info: Serve is on
+[25-06-25 13-50-06] info: Serve is on
+[25-06-25 13-50-15] info: Serve is on
+[25-06-25 13-51-01] info: Serve is on
+[25-06-25 13-51-18] info: Serve is on
+[25-06-25 13-52-17] info: Serve is on
+[25-06-25 13-53-00] info: Serve is on
+[25-06-25 13-53-15] info: Serve is on
+[25-06-25 13-54-54] info: Serve is on
+[25-06-25 13-55-20] info: Serve is on
+[25-06-25 13-56-17] info: Serve is on
+[25-06-25 13-57-04] error: Access Unauthorized
+[25-06-25 13-57-07] error:  Validation failed 
+[25-06-25 13-57-09] error:  Validation failed 
+[25-06-25 13-57-14] error: Access Unauthorized
+[25-06-25 13-57-40] error: Unauthorized
+[25-06-25 13-57-47] error: Access Unauthorized
+[25-06-25 13-58-47] error:  Validation failed 
+[25-06-25 13-58-55] error: Access Unauthorized
+[25-06-25 13-58-56] error: Access Unauthorized
+[25-06-25 13-59-27] error: Access Unauthorized
+[25-06-25 14-01-22] info: Serve is on
+[25-06-25 14-01-51] info: Serve is on
+[25-06-25 14-04-11] info: Serve is on
+[25-06-25 14-05-32] info: Serve is on
+[25-06-25 14-05-47] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
+[25-06-25 14-07-10] info: Serve is on
+[25-06-25 14-10-16] info: Serve is on
+[25-06-25 14-11-30] info: Serve is on

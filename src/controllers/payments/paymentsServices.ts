@@ -3,14 +3,14 @@ import { Payment, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
 
 export const getPayments = async (page: number = 1, limit: number = 10) => {
-    const payments = await Payment.find();
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
+    const payments = await Payment.find()
+        .skip((page - 1) * limit)
+        .limit(limit)
 
-    const paginatedPayments = payments.slice(startIndex, endIndex);
+    const total = await Payment.countDocuments()
     return {
-        products: paginatedPayments,
-        total: payments.length,
+        payments: payments,
+        total: total,
     };
 }
 
@@ -19,20 +19,21 @@ export const getPaymentsByUserId = async (userId: string, page: number = 1, limi
     if (!user) {
         throw new AppError("User not found", 404);
     }
-    const payments = await Payment.find({ userId });
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
 
-    const paginatedPayments = payments.slice(startIndex, endIndex);
+    const payments = await Payment.find({ userId })
+        .skip((page - 1) * limit)
+        .limit(limit)
+
+    const total = await Payment.countDocuments({ userId })
     return {
-        products: paginatedPayments,
-        total: payments.length,
+        payments: payments,
+        total: total,
     };
 }
 
 export const getPaymentById = async (paymentId: string) => {
     const payment = await Payment.findById(paymentId);
-    if(!payment){
+    if (!payment) {
         throw new AppError("Payment not found", 404)
     }
     return payment
@@ -40,11 +41,11 @@ export const getPaymentById = async (paymentId: string) => {
 
 export const createPayment = async (productId: string, userId: string, data: IPaymentCreateData) => {
     const user = await User.findById(userId);
-    if(!user){
+    if (!user) {
         throw new AppError("User not found", 404);
     }
     const product = await Product.findById(productId);
-    if(!product){
+    if (!product) {
         throw new AppError("Product not found", 404);
     }
 
@@ -56,7 +57,7 @@ export const createPayment = async (productId: string, userId: string, data: IPa
         status: "pending"
     })
 
-    return({
+    return ({
         success: true,
         message: "Payment successfully added and posted."
     })
@@ -64,11 +65,11 @@ export const createPayment = async (productId: string, userId: string, data: IPa
 
 export const updatePayment = async (paymentId: string, data: IPaymentUpdateData) => {
     const payment = await Payment.findById(paymentId);
-    if(!payment){
+    if (!payment) {
         throw new AppError("Payment not found", 404);
     };
-    
-    const editPayment = await Payment.findByIdAndUpdate(paymentId, {...data, updatedAt: new Date()});
+
+    const editPayment = await Payment.findByIdAndUpdate(paymentId, { ...data, updatedAt: new Date() });
     return {
         success: true,
         message: " Payment successfully updated. "
@@ -77,7 +78,7 @@ export const updatePayment = async (paymentId: string, data: IPaymentUpdateData)
 
 export const continuePayment = async (paymentId: string) => {
     const payment = await Payment.findById(paymentId);
-    if(!payment){
+    if (!payment) {
         throw new AppError("Payment not found", 404);
     };
 
@@ -90,7 +91,7 @@ export const continuePayment = async (paymentId: string) => {
 
 export const cancelPayment = async (paymentId: string) => {
     const payment = await Payment.findById(paymentId);
-    if(!payment){
+    if (!payment) {
         throw new AppError("Payment not found", 404);
     };
 
@@ -103,10 +104,10 @@ export const cancelPayment = async (paymentId: string) => {
 
 export const deletePaymentById = async (paymentId: string) => {
     const payment = await Payment.findById(paymentId);
-    if(!payment){
+    if (!payment) {
         throw new AppError("Payment not found", 404);
     }
-    if(payment.status === "confirmed") {
+    if (payment.status === "confirmed") {
         throw new AppError("Status of this payment is confirmed and you can't delete that.", 400);
     }
     await Payment.findByIdAndDelete(paymentId);

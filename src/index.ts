@@ -19,7 +19,6 @@ app.use("/payments", paymentsController);
 app.use("/scores", scoresControllers)
 app.use("/favorites", favoritesControllers)
 
-
 app.use(errorMiddleware);
 
 const PORT = 3000;

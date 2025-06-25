@@ -5,3 +5,10 @@ export interface IUser {
     password: string;
     role: 'admin' | 'user';
 }
+
+export interface IEditUser {
+    username?: string;
+    firstName?: string,
+    lastName?: string,
+    profilePicture?: string;
+}

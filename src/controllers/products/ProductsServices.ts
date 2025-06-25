@@ -3,15 +3,15 @@ import { IProduct } from "../../types/product/product-type";
 import { AppError } from "../../utils/error/AppError";
 
 export const getProducts = async (page: number = 1, limit: number = 10) => {
-    const products = await Product.find();
-    
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
+    const products = await Product.find()
+        .skip((page - 1) * limit)
+        .limit(limit)
 
-    const paginatedProducts = products.slice(startIndex, endIndex);
+    const total = await Product.countDocuments()
+
     return {
-        products: paginatedProducts,
-        total: products.length,
+        products: products,
+        total: total,
     };
 }
 export const getProductById = async (id: string) => {

@@ -86,3 +86,23 @@
 [25-06-24 03-29-10] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
 [25-06-24 03-32-44] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
 [25-06-24 03-33-30] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-01.nlqmdqy.mongodb.net
+[25-06-25 12-38-55] error: Unauthorized
+[25-06-25 12-40-23] error: Cast to ObjectId failed for value "61" (type string) at path "_id" for model "User"
+[25-06-25 12-40-34] error: Cast to ObjectId failed for value "61" (type string) at path "_id" for model "User"
+[25-06-25 12-41-03] error: This product already exist in favorites user list.
+[25-06-25 12-43-42] error: This product already exist in favorites user list.
+[25-06-25 12-45-03] error: This product already exist in favorites user list.
+[25-06-25 12-48-30] error: User not found.
+[25-06-25 13-30-48] error: Unauthorized
+[25-06-25 13-44-36] error: Unauthorized
+[25-06-25 13-57-04] error: Access Unauthorized
+[25-06-25 13-57-07] error:  Validation failed 
+[25-06-25 13-57-09] error:  Validation failed 
+[25-06-25 13-57-14] error: Access Unauthorized
+[25-06-25 13-57-40] error: Unauthorized
+[25-06-25 13-57-47] error: Access Unauthorized
+[25-06-25 13-58-47] error:  Validation failed 
+[25-06-25 13-58-55] error: Access Unauthorized
+[25-06-25 13-58-56] error: Access Unauthorized
+[25-06-25 13-59-27] error: Access Unauthorized
+[25-06-25 14-05-47] error: Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User"
