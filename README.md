@@ -76,6 +76,12 @@ src/
 ### ❣️ Favorites (`/favorites`)
 - Add & get all and by id of users' favorites.
 
+### 🛒 Cart (`/cart`)
+- add, clear, update, get Cart of user.
+
+### 📒 Orders (`/orders`)
+- add, get, delete, change status Orders
+
 > More features will be added soon!
 
 ---
