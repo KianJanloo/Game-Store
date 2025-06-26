@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import errorMiddleware from "../middlewares/error/errorMiddleware";
 import { authController, cartControllers, categoriesController, commentsControllers, dashboardController, favoritesControllers, ordersControllers, paymentsController, productsController, rolesController, scoresControllers, usersController } from "../controllers";
+import { connectDB } from "../lib/db";
 
 const app = express();
 app.use(cors());
@@ -27,12 +28,6 @@ app.get("/", (_req, res) => {
   res.send("API is running!");
 });
 
-mongoose.connect(process.env.MONGODB_URI as string)
-  .then(() => {
-    console.log("MongoDB connected");
-  })
-  .catch((err) => {
-    console.log("MongoDB connection error:", err);
-  });
+connectDB();
 
 export default app;
