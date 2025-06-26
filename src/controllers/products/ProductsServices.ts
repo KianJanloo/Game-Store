@@ -14,7 +14,7 @@ export const getProducts = async (
     let filter: any = {};
 
     if (search) {
-        filter.name = { $regex: search, $options: 'i' };
+        filter.title = { $regex: search, $options: 'i' };
     }
 
     let orderStr: 'asc' | 'desc' = 'asc';
