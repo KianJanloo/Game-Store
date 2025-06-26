@@ -56,11 +56,12 @@ export const deleteCommentById = async (commentId: number) => {
 
 export const getAllComments = async (query: any) => {
 
-    const { skip, limit, filter } = buildQueryOptions(query, ["title", "message"]);
+    const { skip, limit, filter, sort } = buildQueryOptions(query, ["title", "message"]);
 
     const comments = await Comment.find(filter)
         .skip(skip)
-        .limit(limit);
+        .limit(limit)
+        .sort(sort);
 
     const total = await Comment.countDocuments(filter);
 
