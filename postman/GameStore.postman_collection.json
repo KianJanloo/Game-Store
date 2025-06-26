@@ -133,7 +133,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/products?page=1&limit=10",
+							"raw": "{{baseURL}}/products?page=1&limit=10&sort=createdAt&order=ASC&search=<string>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -148,6 +148,21 @@
 								{
 									"key": "limit",
 									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt",
+									"description": "sort by anything"
+								},
+								{
+									"key": "order",
+									"value": "ASC",
+									"description": "ASC  | DESC"
+								},
+								{
+									"key": "search",
+									"value": "<string>",
+									"description": "tittle of product"
 								}
 							]
 						}
@@ -329,7 +344,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users?page=1&limit=10",
+							"raw": "{{baseURL}}/users?page=1&limit=10&search=<strin>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -344,6 +359,11 @@
 								{
 									"key": "limit",
 									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "<strin>",
+									"description": "search on \"username\""
 								}
 							]
 						}
@@ -461,7 +481,7 @@
 			"name": "Role",
 			"item": [
 				{
-					"name": "Change Role",
+					"name": "Change Role ( admin )",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -583,7 +603,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/categories?page=1&limit=10",
+							"raw": "{{baseURL}}/categories?page=1&limit=10&search=<string>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -598,6 +618,11 @@
 								{
 									"key": "limit",
 									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "<string>",
+									"description": "search on \"title\""
 								}
 							]
 						}
@@ -672,7 +697,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/payments?page=1&limit=10",
+							"raw": "{{baseURL}}/payments?page=1&limit=10&status=<string>&minAmount=<number>&maxAmount=<number>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -687,6 +712,19 @@
 								{
 									"key": "limit",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "<string>",
+									"description": "\"pending\" | \"confirmed\" | \"canceled\""
+								},
+								{
+									"key": "minAmount",
+									"value": "<number>"
+								},
+								{
+									"key": "maxAmount",
+									"value": "<number>"
 								}
 							]
 						}
@@ -709,7 +747,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/payments/:userId?page=1&limit=10",
+							"raw": "{{baseURL}}/payments/:userId?page=1&limit=10&status=<string>&minAmount=<number>&maxAmount=<number>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -725,6 +763,19 @@
 								{
 									"key": "limit",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "<string>",
+									"description": "\"pending\" | \"confirmed\" | \"canceled\""
+								},
+								{
+									"key": "minAmount",
+									"value": "<number>"
+								},
+								{
+									"key": "maxAmount",
+									"value": "<number>"
 								}
 							],
 							"variable": [
@@ -974,7 +1025,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/scores?page=1$limit=10",
+							"raw": "{{baseURL}}/scores?page=1&limit=10&minAmount=<number>&maxAmount=<number>",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -984,7 +1035,19 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "1$limit=10"
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "minAmount",
+									"value": "<number>"
+								},
+								{
+									"key": "maxAmount",
+									"value": "<number>"
 								}
 							]
 						}
@@ -1212,6 +1275,527 @@
 							],
 							"path": [
 								"favorites",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get Cart Of User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cart/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cart/add/:userId/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"add",
+								":userId",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product from cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cart/delete/product/:userId/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"delete",
+								"product",
+								":userId",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cart/clear/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cart",
+								"clear",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders?page=1&limit=10&status=<string>",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "<string>",
+									"description": "\"pending\" | \"confirmed\" | \"canceled\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get orders by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit status of order ( admin )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"<string>\" // pending | confirmed | canceled\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order ( admin )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders/delete/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								"delete",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"<string>\",\r\n    \"message\": \"<string>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/comments/add/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"comments",
+								"add",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"<string>\",\r\n    \"message\": \"<string>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/comments/edit/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"comments",
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/comments/delete/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"comments",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/comments?page=1&limit=10&search=<string>&sort=createdAt&order=ASC",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "<string>",
+									"description": "search on \"title\" & \"message\""
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "order",
+									"value": "ASC",
+									"description": "ASC | DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/comments/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"comments",
 								":id"
 							],
 							"variable": [
