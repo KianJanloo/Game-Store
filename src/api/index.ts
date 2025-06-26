@@ -26,6 +26,10 @@ app.use(errorMiddleware);
 
 const PORT = 3000;
 
+app.get('/', (_req, res) => {
+  res.send('API is running!');
+});
+
 mongoose.connect("mongodb+srv://admin:1388ki8831@express.nlqmdqy.mongodb.net/").then(() => {
     app.listen(PORT, () => {
         logger.info("Serve is on")
