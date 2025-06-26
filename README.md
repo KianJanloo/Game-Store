@@ -4,6 +4,10 @@ Game_Store is a backend service for an online gaming products store, built with 
 
 ---
 
+## ☘️ Deployment 
+
+Link project on vercel deployment : [https://game-store-kappa-woad.vercel.app].
+
 ## 📘 API Documentation
 
 You can explore and test all API endpoints using the Postman collection below:
@@ -81,9 +85,6 @@ src/
 
 ### 📒 Orders (`/orders`)
 - add, get, delete, change status Orders
-
-> More features will be added soon!
-
 ---
 
 ## 📦 Installation
