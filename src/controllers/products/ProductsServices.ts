@@ -2,21 +2,47 @@ import { Product } from "../../models";
 import { IProduct } from "../../types/product/product-type";
 import { AppError } from "../../utils/error/AppError";
 
-export const getProducts = async (page: number = 1, limit: number = 10) => {
-    const products = await Product.find()
+import { ParsedQs } from 'qs';
+
+export const getProducts = async (
+    page: number,
+    limit: number,
+    search: string,
+    sortBy: string,
+    order: string | ParsedQs | string[] = 'asc'
+) => {
+    let filter: any = {};
+
+    if (search) {
+        filter.name = { $regex: search, $options: 'i' };
+    }
+
+    let orderStr: 'asc' | 'desc' = 'asc';
+    if (typeof order === 'string' && (order === 'asc' || order === 'desc')) {
+        orderStr = order;
+    }
+
+    const sortOrder = orderStr === 'asc' ? 1 : -1;
+    const sortObj: any = {};
+    sortObj[sortBy] = sortOrder;
+
+    const products = await Product.find(filter)
         .skip((page - 1) * limit)
         .limit(limit)
+        .sort(sortObj);
 
-    const total = await Product.countDocuments()
+    const total = await Product.countDocuments(filter);
 
     return {
-        products: products,
-        total: total,
+        products,
+        total,
     };
 }
+
+
 export const getProductById = async (id: string) => {
     const product = await Product.findById(id);
-    if(!product){
+    if (!product) {
         throw new AppError("Product not found", 404);
     }
     return product;
@@ -32,8 +58,8 @@ export const createProduct = async (product: IProduct) => {
 }
 
 export const updateProduct = async (product: IProduct, id: string) => {
-    const updatedProduct = await Product.findByIdAndUpdate(id, {product, updatedAt: new Date()});
-    if(!updatedProduct){
+    const updatedProduct = await Product.findByIdAndUpdate(id, { product, updatedAt: new Date() });
+    if (!updatedProduct) {
         throw new AppError("Product not found", 404);
     }
     return {
@@ -44,7 +70,7 @@ export const updateProduct = async (product: IProduct, id: string) => {
 
 export const deleteProduct = async (id: string) => {
     const deletedProduct = await Product.findByIdAndDelete(id);
-    if(!deletedProduct){
+    if (!deletedProduct) {
         throw new AppError("Product not found", 404);
     }
     return {

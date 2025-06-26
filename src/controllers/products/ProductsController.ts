@@ -9,9 +9,8 @@ const router = express.Router();
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getProducts(page, limit));
+        const { page, limit, search, sort, order } = req.query
+        res.send(await getProducts(Number(page), Number(limit), search?.toString() || "", sort?.toString() || "createdAt", order?.toString()));
     } catch (error) {
         next(error);
     }

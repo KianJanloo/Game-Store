@@ -9,7 +9,7 @@ export const getUsers = async (page: number = 1, limit: number = 10) => {
 
     const paginatedUsers = users.slice(startIndex, endIndex);
     return {
-        products: paginatedUsers.map((user) => ({
+        users: paginatedUsers.map((user) => ({
             id: user.id,
             username: user.username,
             email: user.email,
