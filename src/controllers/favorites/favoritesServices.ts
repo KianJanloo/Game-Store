@@ -1,7 +1,10 @@
 import { Favorite, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 
-export const getFavoritesByUserId = async (userId: string, page: number = 1, limit: number = 10) => {
+export const getFavoritesByUserId = async (userId: string, query: any) => {
+    const { skip, limit } = buildQueryOptions(query);
+
     const user = await User.findById(userId);
     if (!user) {
         throw new AppError(" User is undefined. ", 404);
@@ -11,7 +14,7 @@ export const getFavoritesByUserId = async (userId: string, page: number = 1, lim
     .populate("product")
     .select("-user")
     .limit(limit)
-    .skip((page - 1) * limit)
+    .skip(skip)
 
     const total = await Favorite.countDocuments({ user: userId })
 

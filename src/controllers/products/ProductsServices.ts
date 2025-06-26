@@ -1,35 +1,17 @@
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 import { Product } from "../../models";
 import { IProduct } from "../../types/product/product-type";
 import { AppError } from "../../utils/error/AppError";
 
-import { ParsedQs } from 'qs';
-
 export const getProducts = async (
-    page: number,
-    limit: number,
-    search: string,
-    sortBy: string,
-    order: string | ParsedQs | string[] = 'asc'
+    query: any
 ) => {
-    let filter: any = {};
-
-    if (search) {
-        filter.title = { $regex: search, $options: 'i' };
-    }
-
-    let orderStr: 'asc' | 'desc' = 'asc';
-    if (typeof order === 'string' && (order === 'asc' || order === 'desc')) {
-        orderStr = order;
-    }
-
-    const sortOrder = orderStr === 'asc' ? 1 : -1;
-    const sortObj: any = {};
-    sortObj[sortBy] = sortOrder;
+    const { filter, limit, skip, sort } = buildQueryOptions(query, ["title", "description"]);
 
     const products = await Product.find(filter)
-        .skip((page - 1) * limit)
+        .skip(skip)
         .limit(limit)
-        .sort(sortObj);
+        .sort(sort);
 
     const total = await Product.countDocuments(filter);
 

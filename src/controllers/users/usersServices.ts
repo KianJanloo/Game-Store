@@ -1,15 +1,19 @@
 import { IEditUser } from "user/user-type";
 import { User } from "../../models"
 import { AppError } from "../../utils/error/AppError";
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 
-export const getUsers = async (page: number = 1, limit: number = 10) => {
-    const users = await User.find();
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
+export const getUsers = async (query: any) => {
 
-    const paginatedUsers = users.slice(startIndex, endIndex);
+    const { filter, skip, limit } = buildQueryOptions(query, ["username"]);
+
+    const users = await User.find(filter)
+    .skip(skip)
+    .limit(limit)
+
+    const total = await User.countDocuments(filter);
     return {
-        users: paginatedUsers.map((user) => ({
+        users: users.map((user) => ({
             id: user.id,
             username: user.username,
             email: user.email,

@@ -38,9 +38,8 @@ router.delete("/delete/:id", authMiddleware, async (req: any, res: Response, nex
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getAllComments(page, limit))
+        const query = req.query;
+        res.send(await getAllComments(query))
     } catch (error) {
         next(error);
     }

@@ -1,6 +1,7 @@
 import { ICreateComment, IEditComment } from "comments/comments-types";
 import { AppError } from "../.././utils/error/AppError";
 import { Comment, Product, User } from "../../models"
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 
 export const createComment = async (authorId: string, productId: string, data: ICreateComment) => {
     const user = await User.findById(authorId);
@@ -53,12 +54,15 @@ export const deleteCommentById = async (commentId: number) => {
     }
 }
 
-export const getAllComments = async (page: number, limit: number) => {
-    const comments = await Comment.find()
-        .skip((page - 1) * limit)
+export const getAllComments = async (query: any) => {
+
+    const { skip, limit, filter } = buildQueryOptions(query, ["title", "message"]);
+
+    const comments = await Comment.find(filter)
+        .skip(skip)
         .limit(limit);
 
-    const total = await Comment.countDocuments();
+    const total = await Comment.countDocuments(filter);
 
     return {
         comments: comments.map(comment => ({

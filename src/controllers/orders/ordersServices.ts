@@ -1,3 +1,4 @@
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 import { AppError } from "../.././utils/error/AppError";
 import { Cart, Order, User } from "../../models"
 
@@ -32,13 +33,16 @@ export const addOrderOfUser = async (userId: string) => {
     }
 }
 
-export const getOrders = async (page: number, limit: number) => {
-    const orders = await Order.find()
+export const getOrders = async (query: any) => {
+
+    const { skip, limit, filter } = buildQueryOptions(query);
+
+    const orders = await Order.find(filter)
         .populate("products")
-        .skip((page - 1) * limit)
+        .skip(skip)
         .limit(limit);
 
-    const total = await Order.countDocuments();
+    const total = await Order.countDocuments(filter);
     return {
         orders: orders.map(order => ({
             id: order._id,

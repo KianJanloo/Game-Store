@@ -1,32 +1,56 @@
 import { IPaymentCreateData, IPaymentUpdateData } from "payments/payments-type";
 import { Payment, Product, User } from "../../models";
 import { AppError } from "../.././utils/error/AppError";
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 
-export const getPayments = async (page: number = 1, limit: number = 10) => {
-    const payments = await Payment.find()
-        .skip((page - 1) * limit)
+export const getPayments = async (query: any) => {
+
+    const { skip, limit, filter } = buildQueryOptions(query);
+
+    const payments = await Payment.find(filter)
+        .skip(skip)
         .limit(limit)
 
-    const total = await Payment.countDocuments()
+    const total = await Payment.countDocuments(filter)
     return {
-        payments: payments,
+        payments: payments.map(payment => ({
+            id: payment._id,
+            userId: payment.userId,
+            productId: payment.productId,
+            status: payment.status,
+            amount: payment.amount,
+            createdAt: payment.createdAt,
+            updatedAt: payment.updatedAt
+        })),
         total: total,
     };
 }
 
-export const getPaymentsByUserId = async (userId: string, page: number = 1, limit: number = 10) => {
+export const getPaymentsByUserId = async (userId: string, query: any) => {
+    const { skip, limit, filter } = buildQueryOptions(query);
+
     const user = await User.findById(userId);
     if (!user) {
         throw new AppError("User not found", 404);
     }
+    
+    filter.userId = userId
 
-    const payments = await Payment.find({ userId })
-        .skip((page - 1) * limit)
+    const payments = await Payment.find(filter)
+        .skip(skip)
         .limit(limit)
 
-    const total = await Payment.countDocuments({ userId })
+    const total = await Payment.countDocuments(filter)
     return {
-        payments: payments,
+        payments: payments.map(payment => ({
+            id: payment._id,
+            userId: payment.userId,
+            productId: payment.productId,
+            status: payment.status,
+            amount: payment.amount,
+            createdAt: payment.createdAt,
+            updatedAt: payment.updatedAt
+        })),
         total: total,
     };
 }

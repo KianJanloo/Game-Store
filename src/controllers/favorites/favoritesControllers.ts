@@ -1,16 +1,14 @@
 import express, { Response, Request, NextFunction } from 'express';
 import authMiddleware from '../../middlewares/auth/authMiddleware';
 import { createFavorite, deleteFavorite, getFavoritesByUserId } from './favoritesServices';
-import { AppError } from '../.././utils/error/AppError';
 
 const router = express.Router();
 
 router.get("/", authMiddleware, async (req: any, res: Response, next: NextFunction) => {
     try {
         const userId = req.user.id;
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getFavoritesByUserId(userId, page, limit));
+        const query = req.query;
+        res.send(await getFavoritesByUserId(userId, query));
     } catch (error) {
         next(error);
     }

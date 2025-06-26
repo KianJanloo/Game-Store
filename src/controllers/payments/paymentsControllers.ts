@@ -13,9 +13,8 @@ router.get("/", authMiddleware, async (req: any, res: Response, next: NextFuncti
         if (user.role !== "admin") {
             throw new AppError("Access unauthorized", 403);
         }
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getPayments(page, limit));
+        const query = req.query;
+        res.send(await getPayments(query));
     } catch (error) {
         next(error)
     }
@@ -24,9 +23,8 @@ router.get("/", authMiddleware, async (req: any, res: Response, next: NextFuncti
 router.get("/:id", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getPaymentsByUserId(id, page, limit));
+        const query = req.query;
+        res.send(await getPaymentsByUserId(id, query));
     } catch (error) {
         next(error)
     }

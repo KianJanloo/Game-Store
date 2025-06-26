@@ -13,9 +13,8 @@ router.get("/", authMiddleware, async (req: any, res: Response, next: NextFuncti
         if(role !== "admin"){
             throw new AppError("Access Unauthorized", 403)
         }
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getAllScoresOfUsers(page, limit));
+        const query = req.query;
+        res.send(await getAllScoresOfUsers(query));
     } catch (error) {
         next(error);
     }

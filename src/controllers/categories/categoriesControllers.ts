@@ -9,9 +9,8 @@ const router = express.Router();
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const page = Number(req.query.page);
-        const limit = Number(req.query.limit);
-        res.send(await getCategories(page, limit));
+        const query = req.query;
+        res.send(await getCategories(query));
     } catch (error) {
         next(error);
     }

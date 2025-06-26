@@ -1,13 +1,17 @@
 import { IEditScore } from "scores/scores-type";
 import { AppError } from "../.././utils/error/AppError";
 import { Score, User } from "../../models"
+import { buildQueryOptions } from "../.././utils/helper/buildQueryOptions";
 
-export const getAllScoresOfUsers = async (page: number, limit: number) => {
-    const scores = await Score.find()
-        .skip((page - 1) * limit)
+export const getAllScoresOfUsers = async (query: any) => {
+
+    const { skip, limit, filter } = buildQueryOptions(query);
+
+    const scores = await Score.find(filter)
+        .skip(skip)
         .limit(limit);
 
-    const total = await Score.countDocuments();
+    const total = await Score.countDocuments(filter);
     return {
         scores: scores.map(score => ({
             userId: score.userId,
