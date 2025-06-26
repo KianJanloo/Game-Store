@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import logger from "../utils/logs/logger";
 import errorMiddleware from "../middlewares/error/errorMiddleware";
 import { authController, cartControllers, categoriesController, commentsControllers, dashboardController, favoritesControllers, ordersControllers, paymentsController, productsController, rolesController, scoresControllers, usersController } from "../controllers";
 
@@ -20,20 +19,20 @@ app.use("/scores", scoresControllers);
 app.use("/favorites", favoritesControllers);
 app.use("/cart", cartControllers);
 app.use("/orders", ordersControllers);
-app.use("/comments", commentsControllers)
+app.use("/comments", commentsControllers);
 
 app.use(errorMiddleware);
 
-const PORT = 3000;
-
-app.get('/', (_req, res) => {
-  res.send('API is running!');
+app.get("/", (_req, res) => {
+  res.send("API is running!");
 });
 
-mongoose.connect("mongodb+srv://admin:1388ki8831@express.nlqmdqy.mongodb.net/").then(() => {
-    app.listen(PORT, () => {
-        logger.info("Serve is on")
-    });
-});
+mongoose.connect(process.env.MONGODB_URI as string)
+  .then(() => {
+    console.log("MongoDB connected");
+  })
+  .catch((err) => {
+    console.log("MongoDB connection error:", err);
+  });
 
 export default app;
