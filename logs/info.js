@@ -482,3 +482,28 @@
 [25-06-25 22-27-18] error: Unauthorized
 [25-06-25 22-27-54] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-00.nlqmdqy.mongodb.net
 [25-06-25 22-29-56] error: Unauthorized
+[25-06-26 12-21-51] info: Serve is on
+[25-06-26 12-36-30] info: Serve is on
+[25-06-26 12-40-08] info: Serve is on
+[25-06-26 12-41-13] info: Serve is on
+[25-06-26 12-43-08] info: Serve is on
+[25-06-26 12-46-36] info: Serve is on
+[25-06-26 12-51-47] info: Serve is on
+[25-06-26 12-53-35] info: Serve is on
+[25-06-26 12-56-03] info: Serve is on
+[25-06-26 12-56-06] error: Comment is undefined.
+[25-06-26 12-56-48] info: Serve is on
+[25-06-26 12-57-17] info: Serve is on
+[25-06-26 12-58-04] info: Serve is on
+[25-06-26 12-58-38] info: Serve is on
+[25-06-26 12-58-55] error: Comment is undefined.
+[25-06-26 12-58-58] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Comment"
+[25-06-26 12-59-58] info: Serve is on
+[25-06-26 13-00-09] info: Serve is on
+[25-06-26 13-00-11] error: Cast to ObjectId failed for value "1" (type number) at path "_id" for model "Comment"
+[25-06-26 13-00-47] info: Serve is on
+[25-06-26 13-01-25] info: Serve is on
+[25-06-26 13-02-14] info: Serve is on
+[25-06-26 13-03-06] info: Serve is on
+[25-06-26 13-03-29] error: Cast to ObjectId failed for value "1" (type number) at path "_id" for model "Comment"
+[25-06-26 13-03-52] info: Serve is on

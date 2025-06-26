@@ -128,3 +128,8 @@
 [25-06-25 22-27-18] error: Unauthorized
 [25-06-25 22-27-54] error: getaddrinfo ENOTFOUND ac-tkxkihf-shard-00-00.nlqmdqy.mongodb.net
 [25-06-25 22-29-56] error: Unauthorized
+[25-06-26 12-56-06] error: Comment is undefined.
+[25-06-26 12-58-55] error: Comment is undefined.
+[25-06-26 12-58-58] error: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Comment"
+[25-06-26 13-00-11] error: Cast to ObjectId failed for value "1" (type number) at path "_id" for model "Comment"
+[25-06-26 13-03-29] error: Cast to ObjectId failed for value "1" (type number) at path "_id" for model "Comment"

@@ -10,5 +10,6 @@ import scoresControllers from './scores/scoresController'
 import favoritesControllers from './favorites/favoritesControllers'
 import cartControllers from './cart/cartControllers'
 import ordersControllers from './orders/ordersControllers'
+import commentsControllers from './comments/commentsControllers'
 
-export { ordersControllers, cartControllers, favoritesControllers, scoresControllers, productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };
+export { commentsControllers, ordersControllers, cartControllers, favoritesControllers, scoresControllers, productsController, authController, usersController, authMiddleware, rolesController, categoriesController, dashboardController, paymentsController };
